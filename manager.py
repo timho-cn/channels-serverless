@@ -18,7 +18,7 @@ class ManagerFactory(object):
         if manager_type == 'SNAP':
             transformer = SnapTransformer()
             uploader = S3Uploader()
-        if manager_type == 'NEXTDOOR':
+        elif manager_type == 'NEXTDOOR':
             transformer = NextdoorTransformer()
             uploader = S3Uploader()
         return Manager(transformer, uploader)
