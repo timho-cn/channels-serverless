@@ -7,8 +7,9 @@ class Manager(object):
         self._transformer = transformer
         self._uploader = uploader
 
-    def run(self):
-        transformed = self._transformer.transform()
+    def run(self, data_loader):
+        loaded_data = data_loader.load()
+        transformed = self._transformer.transform(loaded_data)
         uploaded = self._uploader.upload(transformed)
         return uploaded
 

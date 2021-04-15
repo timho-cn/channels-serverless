@@ -1,0 +1,30 @@
+name: Build
+
+on: [push]
+
+env:
+  PYTHON_VERSION: 3.9
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+
+      - name: Setup Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
