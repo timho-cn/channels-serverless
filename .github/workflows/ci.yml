@@ -12,8 +12,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
 
-      - run: ls -la ~/.cache/pip
-
       - name: Setup Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v1
         with:
