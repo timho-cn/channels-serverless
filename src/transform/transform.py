@@ -1,8 +1,10 @@
 class SnapTransformer(object):
     def transform(self, data):
-        return f'Snap transformed {data}'
+        print(f'Snap transformed {data}')
+        return True
 
 
 class NextdoorTransformer(object):
     def transform(self, data):
-        return f'Nextdoor transformed {data}'
+        print(f'Nextdoor transformed {data}')
+        return True
